@@ -1,11 +1,11 @@
 Name:           nautilus-dropbox
-Version:        1.6.2
+Version:        2.10.0
 Release:        1%{?dist}
 Summary:        Dropbox integration for Nautilus
 
 License:        GPLv3
 URL:            https://www.dropbox.com/
-Source0:        https://www.dropbox.com/download?dl=packages/%{name}-%{version}.tar.bz2
+Source0:        https://linux.dropbox.com/packages/%{name}-%{version}.tar.bz2
 
 BuildRequires:  nautilus-devel
 BuildRequires:  python-docutils
@@ -42,5 +42,5 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/dropbox.desktop
 %{_datadir}/nautilus-dropbox
 
 %changelog
-* Sun Dec 21 2014 Vasiliy N. Glazov <vascom2@gmail.com> 1.6.2-1
+* Sun Dec 21 2014 Vasiliy N. Glazov <vascom2@gmail.com> 2.10.0-1
 - Initial build
