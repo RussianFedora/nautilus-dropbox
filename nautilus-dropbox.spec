@@ -22,24 +22,24 @@ the Dropbox web service with your GNOME Desktop.
 
 
 %build
-%configure
+%configure --disable-static
 make %{?_smp_mflags}
 
 
 %install
 %make_install
-rm %{buildroot}%{_libdir}/nautilus/extensions-3.0/libnautilus-dropbox.*a
+rm %{buildroot}%{_libdir}/nautilus/extensions-3.0/libnautilus-dropbox.la
 desktop-file-validate %{buildroot}%{_datadir}/applications/dropbox.desktop
 
 
 %files
 %doc AUTHORS ChangeLog COPYING NEWS README
 %{_bindir}/dropbox
-%{_libdir}/nautilus/extensions-3.0/libnautilus-dropbox.so
+%{_libdir}/nautilus/extensions-3.0/%{name}.so
 %{_datadir}/applications/dropbox.desktop
 %{_datadir}/icons/hicolor/*x*/apps/dropbox.png
 %{_mandir}/man1/dropbox.1.gz
-%{_datadir}/nautilus-dropbox
+%{_datadir}/%{name}
 
 %changelog
 * Sun Dec 21 2014 Vasiliy N. Glazov <vascom2@gmail.com> 2.10.0-1
